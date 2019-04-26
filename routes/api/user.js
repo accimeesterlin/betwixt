@@ -14,9 +14,21 @@ router.get('/', (req, res) => {
 // POST route fo api/user
 // Create a Post
 // Authentication???
-router.post("/", (req, res) => {
+router.post("/register", (req, res) => {
+     // validation
+     const { errors, isValid } = validateRegisterInput(req.body);
+     if (!isValid){
+          return res.status(400).json(errors);
+     }
+     User.findOne({email: req.body.email}).then(user => {
+          if (user) {
+               return res.status(400).json ({email: "Email already exists"});
+          }
+     })
      const newUser = new User({
-          name: req.body.name
+          name: req.body.name,
+          email: req.body.email,
+          password:req.body.password
      });
      newUser.save().then(user => res.json(user));
 });

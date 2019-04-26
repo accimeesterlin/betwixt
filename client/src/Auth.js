@@ -20,12 +20,14 @@ class Auth {
   }
 
   getProfile() {
+    
     return this.profile;
   }
 
   getIdToken() {
     return this.idToken;
   }
+
 
   isAuthenticated() {
     return new Date().getTime() < this.expiresAt;

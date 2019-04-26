@@ -1,7 +1,7 @@
 {
   "name": "betwixt",
   "version": "1.0.0",
-  "description": "Mapping App that provides a mid-point for people to meet at",
+  "description": "Mapping App that provides mid-point distance for people to meet",
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
