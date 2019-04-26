@@ -25,7 +25,7 @@ export default function Home(props) {
             component={Link}
             to="/map"
           >
-            sumbit
+            submit
           </Button>
         </div>
       </div>
